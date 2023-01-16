@@ -6,5 +6,24 @@
 </head>
 <body>
  <h1 th:text="${titulo}"></h1>
+ 	<table th:if="${! usuarios.isEmpty()}">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr th:each="usuario: ${usuarios}">
+				<td th:text="${usuario.nombre}"></td>
+				<td th:text="${usuario.apellido}"></td>
+				<td th:text="${usuario.email}"></td>
+
+			</tr>
+		</tbody>
+
+	</table>
 </body>
 </html>
