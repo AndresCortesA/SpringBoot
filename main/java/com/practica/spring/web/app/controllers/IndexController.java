@@ -50,21 +50,13 @@ public class IndexController {
 	
 	@RequestMapping("/listar")
 	public String listar(Model model) {
-		/*
-		 * una forma más optima, Arrays.asList(); esto convierte en una lista
-		 * los datos que le demos a partir del constructor separados por una coma
-		 */
-//		List<Usuario> usuarios = Arrays.asList(new Usuario("Andrew", "Cortes", "andres@estecorreo.com"),
-//				new Usuario("Flopez", "Maria", "Flopez@estecorreo.com"),
-//				new Usuario("Marian", "Cilantro", "marian@estecorreo.com"));
 		
-		//una forma
-//		usuarios.add(new Usuario("Andrew", "Cortes", "andres@estecorreo.com"));
-//		usuarios.add(new Usuario("Flopez", "Maria", "Flopez@estecorreo.com"));
-//		usuarios.add(new Usuario("Marian", "Cilantro", "marian@estecorreo.com"));
-		
+<<<<<<< HEAD
 		model.addAttribute("tituloListar", textoListar);
 //		model.addAttribute("usuarios", usuarios);
+=======
+		model.addAttribute("tituloListar", "Listado de usuarios");
+>>>>>>> df66d5ccb7ba89c6eeb7efb380a07860dffa0c05
 		
 		return "listar";
 	}
