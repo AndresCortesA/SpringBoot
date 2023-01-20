@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.practica.spring.web.app.models.Usuario;
@@ -42,23 +43,20 @@ public class IndexController {
 	
 	@RequestMapping("/listar")
 	public String listar(Model model) {
-		/*
-		 * una forma más optima, Arrays.asList(); esto convierte en una lista
-		 * los datos que le demos a partir del constructor separados por una coma
-		 */
+		
+		model.addAttribute("tituloListar", "Listado de usuarios");
+		
+		return "listar";
+	}
+	
+	//Este sera un metodo más optimo que nos permita desarrollar los datos de manera más eficiente
+	//llamandolos en los otros metodos ya que estara disponible para todas las rutas
+	@ModelAttribute("usuarios")
+	public List<Usuario> poblarUsuario(){
 		List<Usuario> usuarios = Arrays.asList(new Usuario("Andrew", "Cortes", "andres@estecorreo.com"),
 				new Usuario("Flopez", "Maria", "Flopez@estecorreo.com"),
 				new Usuario("Marian", "Cilantro", "marian@estecorreo.com"));
-		
-		//una forma
-//		usuarios.add(new Usuario("Andrew", "Cortes", "andres@estecorreo.com"));
-//		usuarios.add(new Usuario("Flopez", "Maria", "Flopez@estecorreo.com"));
-//		usuarios.add(new Usuario("Marian", "Cilantro", "marian@estecorreo.com"));
-		
-		model.addAttribute("tituloListar", "Listado de usuarios");
-		model.addAttribute("usuarios", usuarios);
-		
-		return "listar";
+		return usuarios;
 	}
 	
 }
