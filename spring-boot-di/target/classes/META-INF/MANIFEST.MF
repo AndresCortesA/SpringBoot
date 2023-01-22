@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: cocol
+Build-Jdk: 19.0.1
+Implementation-Title: spring-boot-di
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.bolsadeideas.springboot.app
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/spring-boot-di
+Created-By: Maven Integration for Eclipse
+
